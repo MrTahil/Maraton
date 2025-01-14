@@ -45,8 +45,8 @@ namespace Maraton_api.Controllers
 
            
             result.Ido = updatedResult.Ido;
-            result.Kor = updatedResult.Kor; // Feltételezve, hogy a Kor is frissíthető
-            result.Futo = updatedResult.Futo; // Ha a futó ID-t is frissíteni szeretnéd
+            result.Kor = updatedResult.Kor; 
+            result.Futo = updatedResult.Futo; 
             _context.Eredmenyeks.Update(result);
 
             await _context.SaveChangesAsync();
