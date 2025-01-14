@@ -35,7 +35,7 @@ namespace Maraton_api.Controllers
         [HttpPut("UpdateRunnerResults/{resultId}")]
         public async Task<ActionResult<Eredmenyek>> UpdateRunnerResults(int resultId, UpdateEredmenyekDto updatedResult)
         {
-            // Az Eid mezőt kell használni az eredmény azonosításához
+           
             var result = await _context.Eredmenyeks.FirstOrDefaultAsync(x => x.Futo == resultId);
 
             if (result == null)
@@ -43,7 +43,7 @@ namespace Maraton_api.Controllers
                 return NotFound(new { message = "Nincs ilyen id-val rendelkező eredmény az adatbázisban." });
             }
 
-            // Frissítsük az eredmény mezőit a DTO alapján
+           
             result.Ido = updatedResult.Ido;
             result.Kor = updatedResult.Kor; // Feltételezve, hogy a Kor is frissíthető
             result.Futo = updatedResult.Futo; // Ha a futó ID-t is frissíteni szeretnéd
